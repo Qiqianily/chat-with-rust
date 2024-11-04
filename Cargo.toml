@@ -1,0 +1,17 @@
+[workspace]
+members = ["chat_server", "notify_server"]
+
+
+# 2021 以后都使用 2 版本的 Rust 解析器
+resolver = "2"
+
+[workspace.dependencies]
+anyhow = "1.0.92"
+axum = { version = "0.7.7", features = ["http2","query","multipart"]}
+serde = { version = "1.0.214", features = ["derive"] }
+serde_yaml = "0.9.34"
+sqlx = { version = "0.8.2",features = ["postgres","runtime-tokio-rustls"]}
+thiserror = "1.0.67"
+tokio = { version = "1.41.0", features = ["full"]}
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
